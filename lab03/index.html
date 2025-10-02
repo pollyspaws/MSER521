@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- stylesheets and metadata go here -->
+        <title>Photos</title>       
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- HTML content tags go here -->
+        <nav class="navbar">
+            <strong>Photos</strong>
+            <a href="music.html">Music</a>
+            <a href="videos.html">Videos</a>
+        </nav>
+        <main>
+            <h1>Photos</h1>
+            <p>Here are some flowers for your viewing.</p>
+
+            <section class="photo-section">
+                <img src="images/daisy.jpg">
+                <img src="images/poppies.jpg">
+                <img src="images/purple.jpg">
+            </section>
+            <h2>Millennial Campus Designations Map</h2>
+            <section map="millennial-campus-map">
+                <!-- Add script to the <head> of your page to load the embeddable map component -->
+                <script type="module" src="https://js.arcgis.com/embeddable-components/4.33/arcgis-embeddable-components.esm.js"></script>
+                <!-- Add custom element to <body> of your page -->
+                 <arcgis-embedded-map style="height:600px;width:700px;" item-id="f96bd4287b5a4d60a6279fe90e9bdc81" theme="light" center="-82.56268693521126,35.61681783673072"scale="18055.9548215" portal-url="https://unca.maps.arcgis.com" ></arcgis-embedded-map>
+            </section>
+        </main>
+    </body>
+</html>
