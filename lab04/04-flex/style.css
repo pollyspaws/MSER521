@@ -11,4 +11,33 @@ body {
     margin: 0;
 }
 
+
+section {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    background-color: #AFE3C0;
+    color: #283b1f;
+}
+
+#bio {
+    background-color: #90C290;
+    color: #38502d;
+
+}
+
+#portfolio {
+    background-color: #688B58;
+    color: #c9e8b8;
+}
+
+#contact {
+    background-color: #446734;
+    color: #e4ffd6;
+}
 /* create additional rules below:  */

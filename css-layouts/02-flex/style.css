@@ -5,5 +5,29 @@ body * {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
     margin: 0px;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+    border: solid 1px black;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    height: 100vh;
+}
+
+.container {
+    border: solid 1px black;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }

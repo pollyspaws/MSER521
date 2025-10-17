@@ -5,7 +5,6 @@ body * {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
 }
 
 /*
@@ -15,8 +14,36 @@ justify-content and align-items properties to center the card.
 */
 main {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+section {
+    box-sizing: border-box;     
+    border: solid 1px #CCC;    
+    width: 50vh;
+}
+
+img {
+    width: 50vh;
+}
+
+p {
+    margin: 20px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-right: 25px;
+}
+
+button {
+    margin: 20px;
+    margin-top: 10px;
+}
+
+h2 {
+    margin: 20px;
+}
 /*
 Part 1: Create some style blocks to style the card. 
     Experiment with: border, padding, margin, height, and width.

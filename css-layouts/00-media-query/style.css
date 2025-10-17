@@ -36,6 +36,16 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-    /* Your code here! */
+    header {
+        background-color: #333;
+        color: snow;
+    }
+    main {
+        background-color: lightgrey;
+    }
+    footer {
+        background-color: coral;
+        color: snow;
+    }
 }
 
