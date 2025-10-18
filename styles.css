@@ -1,7 +1,160 @@
+ul {
+  list-style: none;
+  padding-left: 1;
+}
+
+.mainlist li {
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  position: relative;
+}
+
+.mainlist > li::before {
+  content: "🍄";
+  position: absolute;
+  left: 0;
+  font-size: .75em;
+}
+
+.secondarylist li {
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  position: relative;
+}
+
+.secondarylist > li::before {
+    content: "🍄‍🟫";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
+@font-face {
+    font-family: supermagic;
+    src: url('fonts/SuperMagic-Regular.otf');
+}
+@font-face {
+    font-family: shroom;
+    src: url('fonts/KR Shroom.ttf');
+}
+
 body {
-    margin: 0;
-    font-family: "Arial", sans-serif;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.6rem;
+    background-color: #293011;
+}
+
+header .container {
+    height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-self: center;
+}
+
+div {
+    align-self: center;
+}
+
+#title {
+    grid-column: 2 / span 3;
+    justify-self: center;
+    background-color: #b9a183;
+    height: 90px;
+    border: solid 1px #982b28;
+    border-radius: 20px;
+}
+
+img {
+    height: 150px;
+    justify-self: center;
+    align-self: center;
+}
+
+#a {
+    justify-self: flex-end;
+}
+
+#b {
+    justify-self: flex-start;
+}
+
+h1 {
+    font-family: shroom;
+    font-size: 75px;
+    font-weight: lighter;
+    color: #982b28;
+    margin-top: 38px;
+    margin-right: 5px;
+    /* -webkit-text-stroke: .5px #982b28 */
+}
+
+h2 {
+    font-family: supermagic;
+    font-weight: lighter;
+    font-size: 30px;
+    color: #b9a183;
+    -webkit-text-stroke: .75px #982b28
+}
+h3 {
+    color: #a18869;
+}
+
+a {
+    color: #a18869;
+}
+
+ol {
+    color: #a18869;
+}
+
+.one::before {
+    content: "🐌";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
+.two::before {
+    content: "🪲";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
+.three::before {
+    content: "🪱";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
+.four::before {
+    content: "🕷️";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
+.five::before {
+    content: "🐝";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
+.six::before {
+    content: "🦋";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
+.seven::before {
+    content: "🐜";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
 }
