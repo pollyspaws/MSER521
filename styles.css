@@ -1,3 +1,22 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.exercises, .labs, .homework {
+    grid-column: 1;
+}
+
+.image {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    margin: 20px;
+}
+
+#mushroomtypes {
+    height: 900px;
+}
+
 ul {
   list-style: none;
   padding-left: 1;

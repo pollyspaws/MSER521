@@ -8,6 +8,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px;
    
     /* you will add addition rules for the container here  */
 }
@@ -15,7 +16,7 @@ body {
 /* create your child rules here:  */
 
 main div {
-    border: solid 1px black;
+    border: solid 3px black;
     background-color: rgb(252, 232, 234);
     padding: 10px;
     min-height: 150px;
