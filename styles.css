@@ -136,22 +136,29 @@ ol {
     font-size: .7em;
 }
 
-.two::before {
-    content: "🪲";
+.onehalf::before {
+    content: "🐛";
     position: absolute;
     left: 0;
-    font-size: .7em;
+    font-size: .7em
 }
 
-.three::before {
+.two::before {
     content: "🪱";
     position: absolute;
     left: 0;
     font-size: .7em;
 }
 
+.three::before {
+    content: "🪲";
+    position: absolute;
+    left: 0;
+    font-size: .7em;
+}
+
 .four::before {
-    content: "🕷️";
+    content: "🐞";
     position: absolute;
     left: 0;
     font-size: .7em;
