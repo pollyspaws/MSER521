@@ -1,20 +1,19 @@
-main {
+.classlinks {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 }
 
-.exercises, .labs, .homework {
+.exercises {
     grid-column: 1;
 }
 
-.image {
+.labs {
     grid-column: 2;
-    grid-row: 1 / span 3;
-    margin: 20px;
 }
 
-#mushroomtypes {
-    height: 900px;
+.homework, .project {
+    grid-column: 3;
 }
 
 ul {
@@ -48,6 +47,19 @@ ul {
     font-size: .7em;
 }
 
+.tertiarylist li {
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  position: relative;
+}
+
+.tertiarylist > li::before {
+  content: "🍁";
+  position: absolute;
+  left: 0;
+  font-size: .75em;
+}
+
 @font-face {
     font-family: supermagic;
     src: url('fonts/SuperMagic-Regular.otf');
@@ -57,9 +69,13 @@ ul {
     src: url('fonts/KR Shroom.ttf');
 }
 
+@font-face {
+    font-family: gotham;
+    src: url('fonts/Gotham Rounded/gothamrnd_bold.otf')
+}
+
 body {
-    margin: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1.6rem;
@@ -86,7 +102,7 @@ div {
     border-radius: 20px;
 }
 
-img {
+header img {
     height: 150px;
     justify-self: center;
     align-self: center;
@@ -113,10 +129,15 @@ h1 {
 h2 {
     font-family: supermagic;
     font-weight: lighter;
-    font-size: 30px;
+    font-size: 40px;
     color: #b9a183;
     -webkit-text-stroke: .75px #982b28
 }
+
+.project {
+    margin-top: 0px;
+}
+
 h3 {
     color: #a18869;
 }
@@ -183,4 +204,57 @@ ol {
     position: absolute;
     left: 0;
     font-size: .7em;
+}
+
+section a:hover,
+section a:focus {
+    text-decoration: none;
+}
+
+.divider img {
+    width: 100%;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    column-gap: 10px;
+}
+
+.personal .image {
+    background-size: cover;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.image p {
+    font-family: supermagic;
+    color: #b9a183;
+    font-weight: lighter;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px #982b28;
+}
+
+.angel {
+    background-image: url(images/IMG_0948.JPG);
+    background-position: center center;
+}
+
+.sadie {
+    background-image: url(images/IMG_5193.JPG);
+    background-position: center top;
+    
+}
+
+.angel2 {
+    background-image: url(images/IMG_0356.JPG);
+    background-position: center center;
+}
+
+.sadie2 {
+    background-image: url(images/IMG_4426.JPG);
+    background-position: center bottom;
 }
