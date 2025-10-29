@@ -12,7 +12,7 @@
     grid-column: 2;
 }
 
-.homework, .project {
+.column3 {
     grid-column: 3;
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 header .container {
-    height: 150px;
+    height: 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-self: center;
@@ -97,13 +97,13 @@ div {
     grid-column: 2 / span 3;
     justify-self: center;
     background-color: #b9a183;
-    height: 90px;
+    height: 56%;
     border: solid 1px #982b28;
-    border-radius: 20px;
+    border-radius: 3vh;
 }
 
 header img {
-    height: 150px;
+    height: 21vh;
     justify-self: center;
     align-self: center;
 }
@@ -118,20 +118,20 @@ header img {
 
 h1 {
     font-family: shroom;
-    font-size: 75px;
+    font-size: 5.2vw;
     font-weight: lighter;
     color: #982b28;
-    margin-top: 38px;
-    margin-right: 5px;
+    margin-top: 5vh;
+    margin-right: 1vh;
     /* -webkit-text-stroke: .5px #982b28 */
 }
 
 h2 {
     font-family: supermagic;
     font-weight: lighter;
-    font-size: 40px;
+    font-size: 2.5rem;
     color: #b9a183;
-    -webkit-text-stroke: .75px #982b28
+    -webkit-text-stroke: .06rem #982b28
 }
 
 .project {
@@ -219,13 +219,13 @@ section a:focus {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    column-gap: 10px;
+    column-gap: .7vw;
 }
 
 .personal .image {
     background-size: cover;
     width: 100%;
-    min-height: 400px;
+    min-height: 56vh;
     display: flex;
     justify-content: center;
 }
@@ -234,8 +234,8 @@ section a:focus {
     font-family: supermagic;
     color: #b9a183;
     font-weight: lighter;
-    font-size: 40px;
-    text-shadow: 2px 2px 2px #982b28;
+    font-size: 2.5rem;
+    text-shadow: .06em .06em .06em #982b28;
 }
 
 .angel {
