@@ -14,7 +14,10 @@ function openDrawer(imgElement) {
     <header>
         <button class="close-btn" aria-label="Close Drawer" onclick="closeDrawer()">&times;</button>
     </header>
-    Add the rest of your template here...
+    <div class = "drawer-content">
+      <img src = "${imgSrc}" alt = "${caption}">
+      <p> ${caption}</p>
+      </div>
    `;
   drawerEl.innerHTML = template;
   drawerEl.className = 'open';
