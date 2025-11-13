@@ -1,0 +1,313 @@
+/* ============================================
+   NAVIGATION
+   ============================================ */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero h1 {
+  margin-top: 150px;
+}
+
+/* ============================================
+   SECTION 1
+   ============================================*/
+#section-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  align-items: self-start;
+}
+
+#section-1 .media {
+  max-width: 40vw;
+  aspect-ratio: 5 / 4;
+  margin-top: 80px;
+  margin-left: 80px;
+}
+
+#section-1 a,
+#section-1 a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+#section-1 h2 {
+  color: var(--matcha-green);
+  margin-bottom: 10px;
+}
+
+#section-1 .content-styles {
+  padding: 80px 80px;
+}
+
+/* TODO: Add video-label styles here */
+#section-1 .video-label {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 5;
+  color: white;
+}
+
+/* ============================================
+   SECTION 2 - WHAT WE DO
+   ============================================ */
+#section-2 {
+  background-image: url(../images/section-2-bkg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-bottom: 400px;
+}
+
+#section-2 .heading-1 {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#section-2 .grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+#section-2 #geese {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+
+/* ============================================
+   SECTION 3
+   ============================================*/
+#section-3 {
+  background-image: url('../images/section-3-bkg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: top / 100% auto;
+  padding: 120px 0;
+}
+
+#section-3 .container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+#section-3 .grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  row-gap: 6rem;
+}
+
+/* ============================================
+   SECTION 4
+   ============================================*/
+#section-4 {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+#section-4 .grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* ============================================
+   SECTION 5
+   ============================================*/
+#section-5 {
+  background-image: url(../images/section-5-bkg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  padding-top: 20vw;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#section-5 .heading-1.mega {
+  color: white;
+  font-size: 4rem;
+}
+
+#section-5 .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-end;
+  border-bottom: 1px solid white;
+}
+
+#section-5 .cards {
+  display: grid;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+
+/* ============================================
+   SECTION 6
+   ============================================*/
+
+#section-6 {
+  background-image: url(../images/section-6-bkg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-top: 50px;
+  padding-bottom: 350px;
+}
+
+#section-6 .heading-1 {
+  margin: 0;
+}
+
+#section-6 .carousel-card .heading-5 {
+  font-size: 1.2rem;
+}
+
+#section-6 .card {
+  width: 360px;
+}
+
+#section-6 .card .media {
+  height: 250px;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1024px) {
+   #section-1 {
+    grid-template-columns: 1fr;
+   }
+   #section-1 .media {
+    max-width: none;
+    margin-top: 0px;
+    margin-left: 0px;
+   }
+   #section-1 .content-styles {
+    padding: 40px 30px;
+   }
+   #section-2 .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+   }
+   #section-2 {
+      padding-bottom: 200px;
+      margin-top: 50px;
+   }
+   #section-2 .heading-1 {
+      font-size: 2.5rem;
+      padding-top: 30px;
+   }
+   #section-2 .btn-container.card{
+      width: 90vw;
+   }
+   #section-2 #geese {
+      right: 10px;
+      top: 10px;
+      width: 300px;
+      height: auto;
+   }
+   #section-3 {
+        padding: 60px 0;
+   }
+   #section-3 .container {
+      grid-template-columns: 1fr;
+   }
+   #section-3 .grid {
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+   }
+   #section-3 .media {
+      height: 48px;
+   }
+   #section-4 .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem;
+   }
+   #section-4 h2 {
+    font-size: 1.3rem;
+   }
+   #section-4 p {
+    font-size: 1.1rem;
+   }
+   #section-4 .btn.primary {
+    padding: 12px 20px;
+    font-size: 1rem;
+   }
+   #section-5 .heading-1.mega {
+    color: black;
+    font-size: 3rem;
+   }
+   #section-5 {
+    background: none;
+    padding-top: 16vw;
+   }
+   #section-5 .container {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+   }
+   #section-5 .cards {
+    gap: 20px;
+   }
+   #section-5 .cards article {
+    padding: 20px;
+   }
+   #section-5 .large {
+    font-size: 18px;
+   }
+   #section-5 .heading-4 {
+    font-size: 1.2rem;
+   }
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  #section-5 .heading-1.mega {
+    font-size: 2rem;
+  }
+  #section-5 .container {
+    gap: .3rem;
+  }
+  #section-5 .cards {
+    gap: 10px;
+  }
+  #section-5 .cards article {
+    padding: 15px;
+  }
+  #section-5 .large {
+    font-size: 15px;
+  }
+  #section-5 .heading-4 {
+    font-size: 1.1rem;
+  }
+  #section-6 .heading-1 {
+    font-size: 3.0rem;
+  }
+}
+/* Paste all media queries below the "regular" styles (ordering matters) */
