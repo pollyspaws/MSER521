@@ -32,7 +32,8 @@ async function getUsers() {
   // TODO: Print all of the first names of the users to the console.
   console.log('5. Print the first name and email of each user to the .container.');
   for (const user of users) {
-    container.innerHTML += `<p>${user.name}: ${user.email}</p>`;
+    const container = document.querySelector("#container");
+    container.innerHTML += `<p>✉️ ${user.name} - ${user.email}</p>`;
   }
 
 }
