@@ -17,6 +17,13 @@ const options = {
 function getDetails(event, chartContext, config) {
   const dataIndex = config.dataPointIndex; // get the index of the clicked point
   console.log(dataIndex);
+  console.log(chartData[dataIndex]);
+  console.log(categories[dataIndex]);
+  const panel = document.querySelector("#details");
+  panel.innerHTML = `
+      <h2>${categories[dataIndex]}</h2>
+      <p>Snow Days: ${chartData[dataIndex]}</p>
+  `;
 
   // 1. How do you get the value of the clicked point?
   // 2. How do you get the category of the clicked point?

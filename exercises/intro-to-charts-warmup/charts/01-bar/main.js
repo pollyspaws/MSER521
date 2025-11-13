@@ -2,6 +2,17 @@ const options = {
   chart: {
     type: 'bar',
   },
+  plotOptions: {
+    bar: {
+      horizontal: true,
+    },
+  },
+  fill: {
+  colors: ['#F44336']
+  },
+  title: {
+    text: "Snow Days",
+  },
   series: [{ name: 'Snow Days', data: [4, 7, 3, 1] }],
   xaxis: { categories: ['Jan', 'Feb', 'Mar', 'Apr'] },
 };

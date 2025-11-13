@@ -29,7 +29,7 @@ async function generateMarkers() {
       icon: getIcon(landmark.color, landmark.icon),
     })
       .addTo(map)
-      .bindPopup(getTemplate(landmark))
+      .bindPopup(landmark.name)
       .on('click', function (e) {
         const detailsElement = document.querySelector('#details');
         detailsElement.innerHTML = getTemplate(landmark);
@@ -40,12 +40,13 @@ async function generateMarkers() {
 function getTemplate(landmark) {
   return `
       <div>
-          <div style="font-size:40px;">${landmark.icon}</div>
+          <div class="emoji">${landmark.icon}</div>
           <h3 style="margin: 0 0 5px 0;">${landmark.name}</h3>
-          <p style="margin: 0; font-size: 12px; color: #666;">
+          <p>
           Type: ${landmark.category.replace('_', ' ').toUpperCase()}
           </p>
-          <p style="margin: 5px 0 0 0; font-size: 11px; color: #999;">
+          <img src="${landmark.online_image}" />
+          <p>
           ${landmark.lat.toFixed(4)}, ${landmark.lng.toFixed(4)}
           </p>
       </div>
