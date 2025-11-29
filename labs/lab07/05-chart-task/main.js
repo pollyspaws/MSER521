@@ -1,11 +1,12 @@
 // variables at the top:
-let snowDays1;
-let snowDays2;
-let months;
+let Rating24;
+let Rating25;
+let food;
+let emoji;
 
 // define the function to get the chart data:
 async function getChartData() {
-  const sheetName = 'Snow Days';
+  const sheetName = 'PhoebeSSnow';
   const response = await fetch(
     `https://script.google.com/macros/s/AKfycbzcOnqzvg3ajtKVALrY_bvc5qo6bvYhwVYgPM7KNKU-3t2mG2YJRrFl4rwDmPxx0ZI78g/exec?sheet=${sheetName}`
   );
@@ -18,9 +19,10 @@ async function createChart() {
   const serverData = await getChartData();
 
   // create the two lists that we need for the chart:
-  snowDays1 = serverData.map(row => row['Snow Days 2023-2024']);
-  snowDays2 = serverData.map(row => row['Snow Days 2024-2025']);
-  months = serverData.map(row => row['Month']);
+  Rating24 = serverData.map(row => row['2024 Rating']);
+  Rating25 = serverData.map(row => row['2025 Rating']);
+  food = serverData.map(row => row['Thanksgiving Food']);
+  emoji = serverData.map(row => row['emoji']);
 
   const options = {
     chart: {
@@ -29,17 +31,21 @@ async function createChart() {
         dataPointSelection: getDetails,
       },
     },
-    colors: ['hotpink', '#3357FF'], // series 1 and series 2 colors
+    title: {
+      text: 'Thanksgiving Food Ratings',
+      align: 'center',
+    },
+    colors: ['#9c2f2f', '#b6562a'], // series 1 and series 2 colors
     plotOptions: {
       bar: {
         horizontal: false,
       },
     },
     series: [
-      { name: 'Snow Days 2023-2024', data: snowDays1 },
-      { name: 'Snow Days 2024-2025', data: snowDays2 },
+      { name: '2024 Rating', data: Rating24 },
+      { name: '2025 Rating', data: Rating25 },
     ],
-    xaxis: { categories: months },
+    xaxis: { categories: food },
   };
 
   document.querySelector('#chart').innerHTML = '';
@@ -50,15 +56,16 @@ async function createChart() {
 // Much simpler function using our stored data:
 function getDetails(event, chartContext, config) {
   const dataIndex = config.dataPointIndex; // get the index of the clicked point
+  
 
   // target the details panel:
   const detailsElement = document.querySelector('#details');
   // update the details panel:
   detailsElement.innerHTML = `
-          <h2>Details for ${months[dataIndex]}</h2>
-          <p>Month: ${months[dataIndex]}</p>
-          <p>2023-2024 Snow Days: ${snowDays1[dataIndex]}</p>
-          <p>2024-2025 Snow Days: ${snowDays2[dataIndex]}</p>
+          <h2>Details for ${food[dataIndex]} ${emoji[dataIndex]}</h2>
+          <p>Thankgiving Food: ${food[dataIndex]} ${emoji[dataIndex]}</p>
+          <p id="ratingOne">2024 Rating: ${Rating24[dataIndex]}/10</p>
+          <p id="ratingTwo">2025 Rating: ${Rating25[dataIndex]}/10</p>
       `;
 }
 

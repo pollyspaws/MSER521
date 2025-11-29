@@ -24,4 +24,25 @@ body {
     margin: 0 auto;
     border: 1px solid #ccc;
     padding: 10px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#details h2{
+    color: #511f16;
+}
+
+#details p{
+    color: #633f21;
+}
+
+#details #ratingOne {
+    color: #9c2f2f;
+}
+
+#details #ratingTwo {
+    color: #b6562a;
 }
