@@ -1,0 +1,72 @@
+.slider-container {
+    position: relative;
+    width: 80vw;
+    height: 500px;
+    overflow: hidden;
+}
+
+.before,
+.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.after-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    /* starting position */
+    overflow: hidden;
+}
+.handle::before {
+    content: "Before";
+    position: absolute;
+    transform: translate(-111%, 47%);
+    color: white;
+    width: 80px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100000;
+}
+.handle::after {
+    content: "After";
+    position: absolute;
+    width: 80px;
+    transform: translate(19%, 47%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    z-index: 100000;
+}
+
+.handle {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 3px);
+    width: 6px;
+    height: 100%;
+    background: white;
+    cursor: ew-resize;
+    z-index: 100000;
+}
+
+.map {
+    width: 80vw;
+    height: 100%;
+}
+
+#details {
+    width: 80vw;
+}
