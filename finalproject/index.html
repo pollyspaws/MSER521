@@ -10,201 +10,194 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Chango&family=Gloock&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <script src="tilesets.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="tilesets.js" defer></script>
+    <script src="https://kit.fontawesome.com/8851e54b04.js" crossorigin="anonymous"></script>
     <script defer src="main.js"></script>
     <style>
-    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-    .w3-row-padding img {margin-bottom: 12px}
+    h1,h2,h3,h4,h5,h6 {font-family: "Gloock", serif}
+    body {font-family: "Montserrat", sans-serif}
+    /* body {font-family: "Karla", sans-serif; font-weight: 300;} */
+    .w3-row-padding {margin-bottom: 12px}
     /* Set the width of the sidebar to 120px */
     .w3-sidebar {width: 120px; background: #222;}
     /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-    /* #main {margin-left: 120px;} */
+    #main {margin-left: 120px;}
     /* Remove margins from "page content" on small screens */
     @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
 </head>
 
-<body class="w3-navy">
+<body class="newNavy">
     <!-- Icon Bar (Sidebar - hidden on small screens) -->
-    <nav class="w3-darknavy w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-darknavy w3-hover-sand">
+    <nav class="newBlack w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-sand">
             <i class="fa fa-home w3-xxlarge"></i>
             <p>HOME</p>
         </a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-sand">
-            <i class="fa fa-user w3-xxlarge"></i>
-            <p>BACKGROUND</p>
+        <a href="#background" class="w3-bar-item w3-button w3-padding-large w3-hover-sand">
+            <i class="fa-solid fa-circle-info w3-xxlarge"></i>
+            <p>BACKGROUND INFO</p>
         </a>
-        <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-sand">
-            <i class="fa fa-eye w3-xxlarge"></i>
+        <a href="#data" class="w3-bar-item w3-button w3-padding-large w3-hover-sand">
+            <i class="fa-solid fa-magnifying-glass-chart w3-xxlarge"></i>
             <p>DATA</p>
         </a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-sand">
-            <i class="fa fa-envelope w3-xxlarge"></i>
-            <p>IMAGES</p>
+        <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-sand">
+            <i class="fa-solid fa-images w3-xxlarge"></i>
+            <p>PHOTOS</p>
         </a>
     </nav>
 
     <!-- Navbar on small screens (Hidden on medium and large screens) -->
     <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-        <div class="w3-bar w3-navy w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <div class="w3-bar newBlack w3-opacity w3-hover-opacity-off w3-center w3-small">
             <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#background" class="w3-bar-item w3-button" style="width:25% !important">BACKGROUND INFO</a>
+            <a href="#data" class="w3-bar-item w3-button" style="width:25% !important">DATA</a>
             <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
         </div>
     </div>
 
     <!-- Page Content -->
     <div class="w3-padding-large" id="main">
         <!-- Header/Home -->
-        <header class="w3-container w3-padding-32 w3-center w3-darknavy" id="home">
+        <header class="w3-container w3-padding-32 w3-center newDark" id="home">
             <h1 class="w3-jumbo">Water Quality in Buncombe County</h1>
-            <h2>The Impact of Hurricane Helene</h2>
-            <img src="/w3images/man_smoke.jpg" alt="water quality image" class="w3-image" width="992" height="1108">
+            <h2 class="w3-text-babyblue">The Impact of Hurricane Helene</h2>
+            <img src="images/IMG_1449.JPG" alt="water quality image" class="w3-image" width="992" height="1108">
         </header>
 
-        <!-- About Section -->
-        <div class="w3-content2 w3-justify w3-text-grey w3-padding-64" id="about">
-            <h2 class="w3-text-light-grey">Hurricane Helene</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p>In September 2024, Hurricane Helene made landfall in the United States, unleashing extreme winds, deadly storm surge and numerous tornadoes. The cyclone, alongside a predecessor rainfall event (PRE), devastated portions of the southeastern United States and southern Appalachia with catastrophic flooding that caused significant loss of life and widespread destruction. With more than 200 fatalities, Helene became the deadliest tropical cyclone to hit the contiguous United States since Katrina in 2005. An estimate of $78.7 billion in damages places Helene as the seventh-costliest U.S. tropical cyclone, with records dating back to 1980.
+        <!-- Background Section -->
+        <div class="w3-content2 w3-justify text-newLight w3-padding-64" id="background">
+            <h2 class="text-newLight">Hurricane Helene</h2>
+            <hr style="width:200px" class="w3-opacity newLight">
+            <p class="w3-text-babyblue">In September 2024, Hurricane Helene made landfall in the United States, unleashing extreme winds, deadly storm surge and numerous tornadoes. The cyclone, alongside a predecessor rainfall event (PRE), devastated portions of the southeastern United States and southern Appalachia with catastrophic flooding that caused significant loss of life and widespread destruction. With more than 200 fatalities, Helene became the deadliest tropical cyclone to hit the contiguous United States since Katrina in 2005. An estimate of $78.7 billion in damages places Helene as the seventh-costliest U.S. tropical cyclone, with records dating back to 1980.
             </p>
-            <p>Many cities in southern Appalachia, including Asheville, N.C., were affected by both the PRE and Helene’s main circulation for weeks and months after the rain and winds ceased; many communities are still recovering a year later. Impacts included power and cellular outages, historic flooding and landslides, and a lack of water infrastructure for nearly two months. </p>
-            <h4 class="w3-text-light-grey">We know how Hurricane Helene damaged infrastructure and flooded waterways, but you may wonder what are the lasting impacts when it comes to <span class="">water quality</span> in our rivers and streams?</h4>
-            <h3 class="w3-padding-16 w3-text-light-grey">The Environmental Quality Institute</h3>
-            <p>EQI collects scientific data that informs environmental understanding and decision-making. Their nonprofit laboratory monitors water quality in streams and lakes throughout western North Carolina. They curate reliable and objective data, expand awareness about regional water quality, and provide technical support to nonprofits, local governments, educational institutions, and communities to drive environmental improvements.
+            <p class="w3-text-babyblue">Many cities in southern Appalachia, including Asheville, N.C., were affected by both the PRE and Helene’s main circulation for weeks and months after the rain and winds ceased; many communities are still recovering a year later. Impacts included power and cellular outages, historic flooding and landslides, and a lack of water infrastructure for nearly two months.
+            </p><br>
+            <div class="newSand box"><h4 style="font-family: Montserrat, sans-serif; font-weight: 500;" class="text-newDark innerbox">We know how Hurricane Helene damaged infrastructure and flooded waterways, but you may wonder what are the lasting impacts when it comes to 
+              <span class="emphasis">water quality</span> in our rivers and streams?</h4>
+            </div><br><br>
+
+          <section class="image-1">
+            <h1 class="text-newDark shadow" style="font-family: Chango, sans-serif;">
+              Lucky for you, theres an organization that can help!
+            </h1>
+          </section>
+
+          <div class="w3-row-padding centerplz" style="margin:0 -16px;">
+            <div class="w3-half headingEQI w3-left-align">
+              <h2 class="w3-padding-16 text-newLight">The Environmental Quality Institute (EQI)</h2>
+            </div>
+            <div class="w3-half centerplz"><img src="images/eqitransparent.png" class="imglogo"/></div>
+          </div>
+
+            <!-- <hr style="width:200px" class="w3-opacity newLight"> -->
+            <p class="w3-text-babyblue">EQI collects scientific data that informs environmental understanding and decision-making. Their nonprofit laboratory monitors water quality in streams and lakes throughout western North Carolina. They curate reliable and objective data, expand awareness about regional water quality, and provide technical support to nonprofits, local governments, educational institutions, and communities to drive environmental improvements.
               EQI has been working with partners and volunteers to monitor western NC waterways since 1990. Sampling sites in 17 mountain counties and 7 NC river basins. Sharing results with more than 30 partner organizations and agencies.</p>
-              <p>Chemical testing is conducted monthly for all sites at EQI’s NC-certified laboratory as part of the Volunteer Water Information Network (VWIN) program. Aquatic macroinvertebrate sampling happens each spring and fall as part of the Stream Monitoring Information Exchange (SMIE) program.
+              <p class="w3-text-babyblue">Chemical testing is conducted monthly for all sites at EQI’s NC-certified laboratory as part of the Volunteer Water Information Network (VWIN) program. Aquatic macroinvertebrate sampling happens each spring and fall as part of the Stream Monitoring Information Exchange (SMIE) program, complementary to the VWIN chemical data collection.
             </p>
     
-            <div class="w3-row w3-center w3-padding-16 w3-section w3-beige">
-              <div class="w3-quarter w3-section">
+            <div class="w3-row w3-center w3-section newSand w3-round-large">
+              <div class="w3-quarter w3-section effects">
                 <span class="w3-xlarge">35</span><br>
                 Years of Monitoring
               </div>
-              <div class="w3-quarter w3-section">
+              <div class="w3-quarter w3-section effects">
                 <span class="w3-xlarge">200+</span><br>
                 Stream and Lake Sites
               </div>
-              <div class="w3-quarter w3-section">
+              <div class="w3-quarter w3-section effects">
                 <span class="w3-xlarge">20,000</span><br>
                 Tests Run Annually
               </div>
-              <div class="w3-quarter w3-section">
+              <div class="w3-quarter w3-section effects">
                 <span class="w3-xlarge">30+</span><br>
                 Partner Organizations
               </div>
             </div>
 
-            <button class="w3-button w3-beige w3-padding-large w3-section">
-              <i class="fa fa-download"></i> EQI's Website
-            </button>
-
-            <h3 class="w3-padding-16 w3-text-light-grey">The Stream Monitoring Information Exchange (SMIE)</h3>
-            <p>The Stream Monitoring Information Exchange (SMIE) program has been sampling streams for bugs (benthic macroinvertebrates) since 2005. Each spring and fall, trained volunteers sample in small groups. Group Leaders with additional experience oversee the sampling and quality assurance protocols. This type of stream monitoring allows a greater understanding of water quality and habitat changes over time based on what is able to live there.</p>
-            <p>The diversity of invertebrates, like stoneflies, mayflies, and caddisflies, provides insights into the health of the watersheds.
-              The Stream Monitoring Information Exchange (SMIE) is a grant-funded biological stream monitoring project. This biomonitoring is complementary to the VWIN chemical data collection. Volunteers participate in a seven-hour training workshop to learn stream benthic macroinvertebrate identification and sampling methods. Then every spring and fall the volunteers go out in small groups to sample streams in WNC for aquatic insects.</p>
+            <a href="https://eqilab.org/"><button class="w3-button newSand2 w3-padding-large w3-section">EQI's Website <i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
             
-            <h3 class="w3-padding-16 w3-text-light-grey">SMIE Ratings</h3>
-            <p>Benthic Macroinvertebrates each have different tolerance values tied to them. These tolerance values indicate how tolerant or intolerant they are to pollution in the streams they inhabit.
-              Certain species have very low tolerance values, meaning they are very intolerant to pollution. These species are indicators of good water quality.
+            <div class="w3-row-padding" style="margin:0 -16px">
+              <div class="w3-half">
+                <h2 class="w3-padding-16 text-newLight w3-left-align">The Stream Monitoring Information Exchange (SMIE)</h2>
+                <p class="w3-text-babyblue">SMIE is a grant-funded biological stream monitoring project that has been sampling streams for bugs (benthic macroinvertebrates) since 2005. Each spring and fall, trained volunteers sample in small groups. Group Leaders with additional experience oversee the sampling and quality assurance protocols. 
+                <p class="w3-text-babyblue">This type of stream monitoring, analysis of benthic macroinvertebrate populations, can provide essential watershed insights and greater understanding of water quality and habitat changes over time.
+                Aquatic organisms are excellent indicators of the comprehensive water quality of a stream since they have limited mobility, specific habitat requirements, and distinct levels of pollution tolerance.
+                </p>
+              </div>
+              <div class="w3-half w3-center">
+                <a href="https://eqilab.org/smie/"><img src="images/newSMIElogo.png" class="SMIElogo w3-right-align w3-hover-opacity"/></a>
+              </div>
+            </div>
+            
+            <h3 class="w3-padding-16 text-newLight">SMIE Ratings</h3>
+            <p class="w3-text-babyblue">The distinct levels of pollution tolerance are denoted by tolerance values assigned to them. 
+              Each type of macroinvertebrate has a distinct response to encountering pollution. A tolerance value quantifies this response. Each species has a tolerance value between 0 and 10, where 0 is extremely intolerant to pollution and 10 is very tolerant.
+              Species with low tolerance values, extremely intolerant to pollution, are indicators of good water quality.
             </p>
             <div class="image-textonside">
-              <div class="centered-img"><img src="images/QuickCrawlingPredator.png" alt="Quick Crawling Predator Stonefly" class="w3-image" width="200"></div>
-              <div class="img-text">
-                <p>This is a stonefly larvae, specifically a quick crawling predator.</p> 
-                <p>It has a tolerance value of 1.3, it is very pollution intolerant.</p>
-                <p>This means that finding these in your river or stream indicates good water quality.</p>
+              <div class="centered-img"><img src="images/stoneflylarvae.png" alt="Quick Crawling Predator Stonefly" class="w3-image">
               </div>
-            </div>
+              <div>
+                <div class="w3-left-align">
+                  <p class="w3-text-babyblue"><i class="fa-regular fa-circle-left w3-xxlarge"></i> To the left is a stonefly larvae, a quick crawling predator.</p> 
+                  <p class="w3-text-babyblue">It has a tolerance value of 1.3, it is very pollution intolerant.</p>
+                </div>
+                <div class="w3-center newcenter"><hr style="width:200px" class="w3-opacity babyblue"></div>
+                <div class="w3-right-align">
+                  <p class="w3-text-babyblue">To the right, on top is a water-worm and on the bottom is a damselfly larvae.<i class="fa-regular fa-circle-right w3-xxlarge"></i></p>
+                  <p class="w3-text-babyblue">They have tolerance values of 7.5 and 7.0, they are very pollution tolerant.</p>
+                </div>
+              </div>
+              <div class="centered-img2">
+                <img src="images/lowtolerance.png" class="w3-image">
+              </div>
+            </div><br>
 
-            <h3 class="w3-padding-16 w3-text-light-grey">SMIE Before and after Helene</h3>
+            <p class="w3-text-babyblue">In order to use these tolerance values to assess overall stream health a tool is needed. In 2013, EQI developed the SMIE Biotic Index (BI) as a tool to specifically assess the waterways of western North Carolina. 
+              The SMIE BI uses individual abundance (the amount of each type of benthic macroinvertebrate), tolerance values, and total abundance of aquatic macroinvertebrates to assign each site a water quality rating.</p>
+        </div>
+
+        <!-- Data Section -->
+          <div class="w3-content2 w3-justify text-newLight" id="data">
+            <h2 class="w3-padding-16 text-newLight">SMIE Before and after Helene</h2>
               <section class="scrollMap">
                 <div id="map" class="map"></div>
-                <div id="details" class="w3-ul w3-sand w3-center"></div>
+                <div id="details" class="w3-ul newSand2 w3-center"></div>
                 <div id="map2" class="map2"></div>
-                <div id="details2" class="w3-ul w3-sand w3-center"></div>
-              </section>
+                <div id="details2" class="w3-ul newSand2 w3-center"></div>
+              </section><br>
     
-             <h3 class="w3-padding-16 w3-text-light-grey">Total Number of Individuals Before and After Helene</h3> 
-              <div class="w3-row-padding" style="margin:-10px -16px">
-                <section class="container"></section>
+             <h2 class="w3-padding-16 text-newLight w3-left-align">Total Number of Individuals Before and After Helene</h2> 
+              <div class="w3-row-padding" style="margin:0 -16px">
+                <!-- <section class="container"></section> -->
                   <div class="w3-margin-bottom">
-                    <div id="chart" class="w3-ul w3-beige w3-center">Loading chart...</div>
+                    <div id="chart" class="w3-ul newSand2 w3-center">Loading chart...</div>
                   </div>
                   <div class="w3-margin-bottom">
-                    <div id="chartDetails" class="w3-ul w3-beige w3-center">Select a bar for more details</div>
+                    <div id="chartDetails" class="w3-ul newSand2 w3-center">Select a bar for more details</div>
                   </div>
-                </section>
               </div>
 
-            <h3 class="w3-padding-16 w3-text-light-grey">Change in Total Individuals After Helene</h3> 
-              <div class="w3-row-padding" style="margin:-10px -16px">
-                <section class="container"></section>
+            <h2 class="w3-padding-16 text-newLight w3-left-align">Change in Total Individuals After Helene</h2> 
+              <div class="w3-row-padding" style="margin:0 -16px">
+                <!-- <section class="container"></section> -->
                   <div class="w3-margin-bottom">
-                    <div id="chart2" class="w3-ul w3-beige w3-center">Loading chart...</div>
+                    <div id="chart2" class="w3-ul newSand2 w3-center">Loading chart...</div>
                   </div>
                   <div class="w3-margin-bottom">
-                    <div id="chartDetails2" class="w3-ul w3-beige w3-center">Select a bar for more details</div>
+                    <div id="chartDetails2" class="newSand2 w3-center">Select a bar for more details</div>
                   </div>
-                </section>
               </div>
-
-             
-            <!-- Grid for pricing tables -->
-            <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
-            <div class="w3-row-padding" style="margin:0 -16px">
-              <div class="w3-half w3-margin-bottom">
-                <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                  <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-                  <li class="w3-padding-16">Web Design</li>
-                  <li class="w3-padding-16">Photography</li>
-                  <li class="w3-padding-16">5GB Storage</li>
-                  <li class="w3-padding-16">Mail Support</li>
-                  <li class="w3-padding-16">
-                    <h2>$ 10</h2>
-                    <span class="w3-opacity">per month</span>
-                  </li>
-                  <li class="w3-light-grey w3-padding-24">
-                    <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="w3-half">
-                <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                  <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
-                  <li class="w3-padding-16">Web Design</li>
-                  <li class="w3-padding-16">Photography</li>
-                  <li class="w3-padding-16">50GB Storage</li>
-                  <li class="w3-padding-16">Endless Support</li>
-                  <li class="w3-padding-16">
-                    <h2>$ 25</h2>
-                    <span class="w3-opacity">per month</span>
-                  </li>
-                  <li class="w3-light-grey w3-padding-24">
-                    <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
-                  </li>
-                </ul>
-              </div>
-            <!-- End Grid/Pricing tables -->
-            </div>
-    
-            <!-- Testimonials -->
-            <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
-            <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-            <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
-            <p>John Doe saved us from a web disaster.</p><br>
-    
-            <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-            <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-            <p>No one is better than John Doe.</p>
-        <!-- End About Section -->
-        </div>
+          </div>     
+    </div>
   
-        <!-- Portfolio Section -->
+        <!-- Photos Section -->
         <div class="w3-padding-64 w3-content" id="photos">
             <h2 class="w3-text-light-grey">My Photos</h2>
             <hr style="width:200px" class="w3-opacity">
@@ -212,16 +205,16 @@
             <!-- Grid for photos -->
             <div class="w3-row-padding" style="margin:0 -16px">
               <div class="w3-half">
-                <img src="/w3images/wedding.jpg" style="width:100%">
-                <img src="/w3images/rocks.jpg" style="width:100%">
-                <img src="/w3images/sailboat.jpg" style="width:100%">
+                <img src="images/Phoebeinthefield.jpeg" style="width:100%">
+                <img src="images/kicknetsampling.jpg" style="width:100%">
+                <img src="images/AnnMarieSampling.jpg" style="width:100%">
               </div>
 
               <div class="w3-half">
-                <img src="/w3images/underwater.jpg" style="width:100%">
-                <img src="/w3images/chef.jpg" style="width:100%">
-                <img src="/w3images/wedding.jpg" style="width:100%">
-                <img src="/w3images/p6.jpg" style="width:100%">
+                <img src="images/guide1.JPG" class="guide1" style="width:100%">
+                <img src="images/guide2.JPG" class="guide2" style="width:100%">
+                <img src="images/guide3.JPG" class="guide3" style="width:100%">
+                <img src="images/guide4.JPG" class="guide4" style="width:100%">
               </div>
             <!-- End photo grid -->
             </div>
@@ -240,17 +233,7 @@
             </div><br>
             <p>Let's get in touch. Send me a message:</p>
 
-            <form action="/action_page.php" target="_blank">
-              <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-              <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-              <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-              <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-              <p>
-                <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-                  <i class="fa fa-paper-plane"></i> SEND MESSAGE
-                </button>
-              </p>
-            </form>
+            
         <!-- End Contact Section -->
         </div>
   

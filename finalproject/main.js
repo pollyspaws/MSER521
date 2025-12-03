@@ -148,6 +148,9 @@ async function createChart() {
       { name: 'Total number of individuals spring 2025', data: spring25 },
     ],
     xaxis: { categories: siteNames },
+    dataLabels: {
+        enabled: false,
+    }
   };
 
   document.querySelector('#chart').innerHTML = '';
@@ -160,13 +163,14 @@ function getDetails(event, chartContext, config) {
   const dataIndex = config.dataPointIndex; // get the index of the clicked point
 
   // target the details panel:
-  const detailsElement = document.querySelector('#chartDetails');
+  const detailsElement3 = document.querySelector('#chartDetails');
   // update the details panel:
-  detailsElement.innerHTML = `
-          <h2>Details for ${siteNames[dataIndex]}</h2>
+  detailsElement3.innerHTML = `<div>
+          <h3 style="margin: 0 0 5px 0; font-weight: bold;">${siteNames[dataIndex]}</h3>
           <p>Site Number: ${siteNumber[dataIndex]}</p>
-          <p>Total Number of Individuals Spring 2024: ${spring24[dataIndex]}</p>
-          <p>Total Number of Individuals Spring 2025: ${spring25[dataIndex]}</p>
+          <h4>Total Number of Individuals Spring 2024: ${spring24[dataIndex]}</h4>
+          <h4>Total Number of Individuals Spring 2025: ${spring25[dataIndex]}</h4>
+          <div>
       `;
 }
 
@@ -214,12 +218,14 @@ function getDetails2(event, chartContext, config) {
   const dataIndex = config.dataPointIndex; // get the index of the clicked point
 
   // target the details panel:
-  const detailsElement2 = document.querySelector('#chartDetails2');
+  const detailsElement4 = document.querySelector('#chartDetails2');
   // update the details panel:
-  detailsElement2.innerHTML = `
-          <h2>Details for ${siteNames[dataIndex]}</h2>
+  detailsElement4.innerHTML = `
+        <div>
+          <h3 style="margin: 0 0 5px 0;">${siteNames[dataIndex]}</h3>
           <p>Site Number: ${siteNumber[dataIndex]}</p>
-          <p>Difference in Individuals After Helene: ${difference[dataIndex]}</p>
+          <h4>Difference in Individuals After Helene: ${difference[dataIndex]}</h4>
+        <div>
       `;
 }
 
