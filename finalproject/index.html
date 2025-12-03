@@ -7,11 +7,13 @@
     <title>Final Project</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="slider.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="tilesets.js" defer></script>
+    <script src="slider.js" defer></script>
     <script defer src="main.js"></script>
     <style>
     body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
@@ -122,10 +124,17 @@
 
             <h3 class="w3-padding-16 w3-text-light-grey">SMIE Before and after Helene</h3>
               <section class="scrollMap">
-                <div id="map" class="map"></div>
+                <div class="slider-container" id="slider">
+                    <div class="before">
+                        <div id="map" class="map"></div>
+                    </div>
+
+                    <div class="after-wrapper" id="afterWrapper">
+                        <div id="map2" class="map"></div>
+                    </div>
+                    <div class="handle" id="handle"></div>
+                </div>
                 <div id="details" class="w3-ul w3-sand w3-center"></div>
-                <div id="map2" class="map2"></div>
-                <div id="details2" class="w3-ul w3-sand w3-center"></div>
               </section>
     
              <h3 class="w3-padding-16 w3-text-light-grey">Total Number of Individuals Before and After Helene</h3> 
