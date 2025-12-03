@@ -3,7 +3,7 @@ const map = L.map('map');
 map.setView([35.643445377615556, -82.55554263663021], 11);
 
 // add the tile layer to the map:
-const currentTileLayer = L.tileLayer(goodMap, {
+const currentTileLayer = L.tileLayer(terrain, {
   attribution: '&copy; Stadia Maps contributors',
 }).addTo(map);
 
@@ -86,25 +86,12 @@ async function generateMarkers2() {
       .addTo(map2)
       .bindPopup(site.name)
       .on('click', function (e) {
-        const detailsElement2 = document.querySelector('#details2');
-        detailsElement2.innerHTML = getTemplate2(site);
+        const detailsElement = document.querySelector('#details');
+        detailsElement.innerHTML = getTemplate(site);
       });
   }
 }
 
-function getTemplate2(site) {
-  return `
-      <div>
-          <h2 style="margin: 0 0 5px 0;">${site.name}</h2>
-          <h4>Site Number: ${site.number}</h4>
-          <h3>Spring 2024 Rating: ${site.rating24}</h3>
-          <h3>Spring 2025 Rating: ${site.rating25}</h3>
-          <p>
-          ${site.LAT.toFixed(4)}, ${site.LON.toFixed(4)}
-          </p>
-      </div>
-      `;
-}
 
 function getIcon2(color25, number) {
   return L.divIcon({
@@ -228,6 +215,47 @@ function getDetails2(event, chartContext, config) {
         <div>
       `;
 }
+
+/************************************/
+/* Code to synchronize the two maps */
+/************************************/
+let isSyncing = false; // Flag to prevent infinite loops
+
+// Sync map2 when map1 changes
+map.on("moveend", function () {
+    if (!isSyncing) {
+        isSyncing = true;
+        map2.setView(map.getCenter(), map.getZoom(), { animate: false });
+        isSyncing = false;
+    }
+});
+
+map.on("zoomend", function () {
+    if (!isSyncing) {
+        isSyncing = true;
+        map2.setView(map.getCenter(), map.getZoom(), { animate: false });
+        isSyncing = false;
+    }
+});
+
+// Sync map1 when map2 changes
+map2.on("moveend", function () {
+    if (!isSyncing) {
+        isSyncing = true;
+        map.setView(map2.getCenter(), map2.getZoom(), { animate: false });
+        isSyncing = false;
+    }
+});
+
+map2.on("zoomend", function () {
+    if (!isSyncing) {
+        isSyncing = true;
+        map.setView(map2.getCenter(), map2.getZoom(), { animate: false });
+        isSyncing = false;
+    }
+});
+
+/************************************/
 
 // run the function:
 createLineChart();

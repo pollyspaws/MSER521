@@ -7,6 +7,7 @@
     <title>Final Project</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="slider.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,6 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Chango&family=Gloock&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <script src="tilesets.js" defer></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://kit.fontawesome.com/8851e54b04.js" crossorigin="anonymous"></script>
+    <script src="tilesets.js" defer></script>
+    <script src="slider.js" defer></script>
     <script defer src="main.js"></script>
     <style>
     h1,h2,h3,h4,h5,h6 {font-family: "Gloock", serif}
@@ -167,11 +170,18 @@
           <div class="w3-content2 w3-justify text-newLight" id="data">
             <h2 class="w3-padding-16 text-newLight">SMIE Before and after Helene</h2>
               <section class="scrollMap">
-                <div id="map" class="map"></div>
-                <div id="details" class="w3-ul newSand2 w3-center"></div>
-                <div id="map2" class="map2"></div>
-                <div id="details2" class="w3-ul newSand2 w3-center"></div>
-              </section><br>
+                <div class="slider-container" id="slider">
+                    <div class="before">
+                        <div id="map" class="map"></div>
+                    </div>
+
+                    <div class="after-wrapper" id="afterWrapper">
+                        <div id="map2" class="map"></div>
+                    </div>
+                    <div class="handle" id="handle"></div>
+                </div>
+                <div id="details" class="w3-ul w3-sand w3-center"></div>
+              </section>
     
              <h2 class="w3-padding-16 text-newLight w3-left-align">Total Number of Individuals Before and After Helene</h2> 
               <div class="w3-row-padding" style="margin:0 -16px">
