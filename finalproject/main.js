@@ -81,7 +81,7 @@ async function generateMarkers2() {
   for (const site of sites) {
     // Create marker with popup
     L.marker([site.LAT, site.LON], {
-      icon: getIcon(site.color25, site.number),
+      icon: getIcon2(site.color25, site.number),
     })
       .addTo(map2)
       .bindPopup(site.name)
@@ -105,7 +105,48 @@ function getIcon2(color25, number) {
 
 generateMarkers2();
 
+function getColor(d) {
+        return d === 'excellent'  ? "#2c7bb6" :
+               d === 'good'  ? "#abd9e9" :
+               d === 'good-fair' ? "#ffffbf" :
+               d === 'fair' ? "#fdae61" :
+               d === 'poor' ? "#d7191c" :
+               d === 'inaccessible' ? "#666" :
+               d === 'discontinued due to danger' ? "#fff" :
+                      "#000";
+              }
+function style(site) {
+        return {
+            weight: 1.5,
+            opacity: 1,
+            fillOpacity: 1,
+            radius: 6,
+            fillColor: getColor(site.rating25),
+            color: "grey"
 
+        };
+    }
+
+legend = L.control({position: 'bottomleft'});
+    legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend');
+    labels = ['<strong>Ratings</strong>'],
+    categories = ['Excellent','Good','Good-fair','Fair','Poor'];
+
+    for (var i = 0; i < categories.length; i++) {
+
+            div.innerHTML += 
+            labels.push(
+                '<i class="circle" style="background:' + getColor(categories[i]) + '"></i> ' +
+            (categories[i] ? categories[i] : '+'));
+
+        }
+        div.innerHTML = labels.join('<br>');
+    return div;
+    };
+           
+    legend.addTo(map);
 
 // define the funciton to create the chart:
 async function createChart() {
